@@ -1,0 +1,10 @@
+import type {CommentBodyProps} from "@/shared/types/comment-body.type";
+
+export const DefaultCommentsEnum:CommentBodyProps[] = [
+   /* {name:"ANNA NOWAK",image:AnnaNowak, rating:100, comment:"Bardzo miło było współpracować z mistrzem swojego fachu, Witalijem. Wszystko dokładnie wyjaśnił, doradził, a oczywiście kominek został dostarczony i zamontowany w ustalonym terminie. Teraz mój kominek jest ozdobą domu :) Życzę wielu udanych transakcji i dalszego rozwoju, ECOKOMINKI!"},
+    {name:"KATARZYNA KOWALSKA", image:KatarzynaKowalska, rating:100, comment:"Syn zrobił mi prezent na urodziny. Prawdziwie królewski podarunek – kominek. Teraz to centrum naszego domu, gdzie spotykają się cztery pokolenia. Dziękuję za wspaniałą pracę i, nie boję się tego słowa, za zjednoczenie rodziny."},
+    {name:"JAKUB WOŹNIAK", image:JakubWozniak, rating:100, comment:"Kupiłem wkład kominkowy dla rodziców. Musiałem wybrać niezawodny i ekonomiczny piec. W porównaniu do starego pieca zużycie drewna zmniejszyło się o 2 metry sześcienne. Dodatkowo wygląda pięknie i nie zajmuje dużo miejsca."},
+    {name:"DAMIAN SZYMAŃSKI", image:DamianSzymanski, rating:100, comment:"Podoba mi się indywidualne podejście. Często klient czegoś chce, ale nie potrafi tego dokładnie wyrazić. Od prawie roku współpracuję na obiektach tylko z Witalijem i zawsze klient jest zadowolony, a ja oddaję obiekt na czas"},
+    {name:"TOMASZ SKRZYPEK", image:TomaszSkrzypek, rating:100, comment:"Zawsze cieszy punktualność i uczciwość firmy. Chciałbym życzyć firmie wielu stałych klientów i dalszego rozwoju. No i oczywiście, radować stałych klientów rabatami!"},
+    {name:"JOANNA LEWANDOWSKA", image:JoannaLewandowska,rating:100, comment:"Kupiliśmy piec kominkowy w ECOKOMINKI kierując się zasadą stosunku ceny do jakości, a jako bonus otrzymaliśmy szczegółowe wyjaśnienia, na co należy zwracać uwagę i od czego lepiej się wystrzegać. Jesteśmy bardzo zadowoleni: mąż cieszy się z jakości technicznej, a ja nie wyobrażałam sobie, że piec może tak udekorować dom. Dziękujemy!"}*/
+] as const
