@@ -6,7 +6,7 @@ import {shortcuts} from "@/shared/consts/enums/shortcuts.enum";
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <footer className="pointer-events-auto z-[9999] bg-white/80 dark:bg-black/80 dark:text-white text-black px-6 py-8 md:py-12">
+        <footer className="pointer-events-auto z-9999 bg-white/80 dark:bg-black/80 dark:text-white text-black px-6 py-8 md:py-12">
             <hr className="my-6 border-gray-700 opacity-30" />
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
                 <div className="text-center md:text-left text-sm md:text-base space-y-2 md:space-y-0 md:space-x-2 flex flex-col md:flex-row items-center md:items-start">

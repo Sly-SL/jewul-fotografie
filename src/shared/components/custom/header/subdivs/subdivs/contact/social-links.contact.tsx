@@ -56,7 +56,7 @@ const SocialLinks = () => {
   return (
     <div className="w-full  dark:bg-white/10 bg-white/80 rounded-2xl p-6 py-8 backdrop-blur-xl hover:shadow-xl hover:shadow-white/20">
       <h1 className="text-xl font-semibold dark:text-white text-black mb-6 flex text-center items-center gap-2">
-        Nasze Media:
+        Moje Media:
       </h1>
       <div className="flex flex-col gap-3 ">
         {socialLinks.map((link) => (

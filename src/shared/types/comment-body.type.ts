@@ -5,5 +5,4 @@ export interface CommentBodyProps {
     rating: number;
     image?: string | StaticImageData;
     comment: string;
-    ordersIds?: string[];
 }
