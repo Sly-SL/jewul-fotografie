@@ -15,7 +15,7 @@ const Buttons: {
         label: "Kontakt",
         linkClassName: "inline-flex items-center dark:text-white/80 text-black/80 gap-2 text-base  hover:scale-[1.02] duration-300 sm:text-lg",
         buttons: [
-            { element: <a href={"tel:+48 XXX XXX XXX"} className="inline-flex items-center gap-2"><Phone /> {"+48 XXX XXX XXX"}</a> },
+            { element: <a href={"tel:+48 796 032 801"} className="inline-flex items-center gap-2"><Phone /> {"+48 796 032 801"}</a> },
             { element: <a className="inline-flex items-center gap-2" href="mailto:jewulfotografia@gmail.com"><Mail /> jewulfotografia@gmail.com</a> },
             { element: <a href={"https://maps.app.goo.gl/fif8GiDj7Gm4kpPY8"} className="inline-flex items-center gap-2"><House />  33-100 Tarnów</a> }
         ]

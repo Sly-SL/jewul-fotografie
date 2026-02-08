@@ -35,7 +35,7 @@ export default function Home() {
                 <BasicH1 className={"backdrop-blur-xl bg-none hover:shadow-white/20 shadow-md hover:shadow-xl transition-all"}>
                     Prawdziwy mistrz swojej dziedziny
                 </BasicH1>
-                <BasicP className={'text-black/70 dark:text-white/80'}>Hej, jestem Filip i zajmuję się tworzeniem wyjątkowych zdjęć już wprawie 5 lat. Każde zdjęcie ma historię. Robię je tak, żeby wracać do nich z dumą </BasicP>
+                <BasicP className={'text-black/70 dark:text-white/80'}>Mam 18 lat i fotografią zajmuję się od prawie czterech lat. Specjalizuję się w reportażach z imprez i wydarzeń młodzieżowych oraz w naturalnych sesjach zdjęciowych. Najbardziej interesują mnie prawdziwe emocje i spontaniczne momenty. Pracuję głównie z młodymi ludźmi, tworząc zdjęcia, które dobrze wyglądają zarówno jako pamiątka, jak i w social mediach. </BasicP>
             </article>
 
             <div className={"animate-fade-in-right duration-1000"}>
