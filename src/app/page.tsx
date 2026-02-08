@@ -3,7 +3,7 @@ import OrderConsultationForm from "@/shared/components/forms/order-consultation.
 import {BasicH1} from "@/shared/components/lib/basic/text/h1.text";
 import {BasicP} from "@/shared/components/lib/basic/text/p.text";
 import {RoundPhoto} from "@/shared/components/custom/pages/home/round-photo.home";
-import Photo from "@/public/assets/filipjewulskifotografia.jpeg"
+import Photo from "@/public/assets/jewul-camera.jpg"
 
 export default function Home() {
   return (
