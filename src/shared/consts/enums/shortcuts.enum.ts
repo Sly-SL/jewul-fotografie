@@ -27,24 +27,20 @@ export const shortcuts = {
 } as const;
 
 export const shortcutsService = {
-    "mentoring":"/Prowadzenie",
-    "consultation":"/Konsultacja%20Telefoniczna%20–%20Doradztwo%20Kominkowe",
-    "agreement":"/Podpisanie%20Umowy%20i%20Gwarancja",
-    "photosession":"/Profesjonalna%20Sesja%20Zdjęć",
-} as const;
-
-export const shortcutsSearch = {
-    "power4-5": "moc4-5",
-    "power6-7": "moc6-7",
-    "power8-10": "moc8-10",
-    "power10+": "moc10+",
-    "kind:iron" : "kind:iron",
-    "kind:cast" : "kind:cast",
-    "kind:tiled" : "kind:tiled",
-} as const;
-
-export const shortcutsVersions = {
-    "Mobile":"/Mobile",
-    "Web":"/Web",
-    "Desktop":"/Desktop",
+    "consultation":"/photo-service1",
+    "mentoring":"/photo-service2",
+    "individual-session":"/photo-service3",
+    "agreement":"/photo-service4",
+    "photo-edition":"/photo-service5",
+    "communions": "/photo-service6",
+    "birthdays-and-eightings":"/photo-service7",
+    "halfways":"/photo-service8",
+    "proms":"/photo-service9",
+    "wedding-afterpaty-and-parties":"/photo-service10",
+    "home-and-close-parties":"/photo-service11",
+    "teanagers-events-and-clubs":"/photo-service12",
+    "christening":"/photo-service13",
+    "school-events":"/photo-service14",
+    "gym-sessions":"/photo-service15",
+    "jubilees-and-anniversaries":"/photo-service16",
 } as const;

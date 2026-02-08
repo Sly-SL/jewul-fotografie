@@ -7,9 +7,17 @@ import {shortcuts, shortcutsService} from "@/shared/consts/enums/shortcuts.enum"
 const consultation: CascadeShortcutsType = `${shortcuts.services}${shortcutsService.consultation}`;
 const mentoring:CascadeShortcutsType =  `${shortcuts.services}${shortcutsService.mentoring}`;
 const agreement: CascadeShortcutsType =  `${shortcuts.services}${shortcutsService.agreement}`;
-const photoSession: CascadeShortcutsType = `${shortcuts.services}${shortcutsService.photosession}`
-const photoEdition: CascadeShortcutsType = `${shortcuts.services}${shortcutsService.photosession}`
-
+const club: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["teanagers-events-and-clubs"]}`
+const photoEdition: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["photo-edition"]}`
+const individualSession: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["individual-session"]}`
+const home: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["home-and-close-parties"]}`
+const school: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["school-events"]}`
+const fit: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["gym-sessions"]}`
+const jubilees: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["jubilees-and-anniversaries"]}`
+const birthdays: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["birthdays-and-eightings"]}`
+const halfways: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["halfways"]}`
+const afterparty: CascadeShortcutsType = `${shortcuts.services}${shortcutsService["wedding-afterpaty-and-parties"]}`
+const christening: CascadeShortcutsType = `${shortcuts.services}${shortcutsService.christening}`
 
 const Buttons:{label:string,linkClassName:string,buttons:
         {
@@ -17,24 +25,34 @@ const Buttons:{label:string,linkClassName:string,buttons:
             href:CascadeShortcutsType,
         }[]
 }[]=[
-    {label:"",linkClassName:'text-xl hover:scale-[1.02] duration-300',buttons:[
+    {label:"",linkClassName:'text-2xl hover:scale-[1.02] duration-300',buttons:[
             {name:"Konsultacja telefoniczna", href:consultation},
-            {name:"Mentoring", href:mentoring},
+            {name:"Urodziny i osiemnastki", href:birthdays},
+            {name:"Półmetki", href:halfways},
+            {name:"Chrzciny", href:christening},
+            {name:"Poprawiny i imprezy po weselach", href:afterparty},
         ]},
     {label:"",linkClassName:'text-lg hover:scale-[1.02] duration-300',buttons:[
-            {name:"Profesjonalna Fotosesja", href: photoSession},
+            {name:"Mentoring Fotograficzny", href:mentoring},
+            {name:"Eventy młodzieżowe i klubowe", href:club},
+            {name:"Sesje indywidualne w plenerze", href: individualSession},
             {name:"Podpisanie umowy", href:agreement },
-            {name:"Edycja zdjęć", href:photoEdition},
-
+            {name:"Edycja i Retusz Zdjęć", href:photoEdition},
         ]},
+    {label:"",linkClassName:'text-md hover:scale-[1.02] duration-300',buttons:[
+            {name:"Domówki i prywatne imprezy", href:home},
+            {name:"Wydarzenia szkolne", href:school},
+            {name:"Zdjęcia treningowe i fitness", href:fit},
+            {name:"Jubileusze i rocznice", href: jubilees}
+        ]}
 ]
 
 const ServicesSubdiv = () => {
     return (
         <SubdivConstructor id={"services"}>
-            <section className={"grid grid-cols-2 items-start justify-center gap-18"}>
+            <section className={"grid grid-cols-3 items-start justify-center gap-18"}>
                 {Buttons.map((item, i) => (
-                    <div className={"grid grid-cols-1"} key={i}>
+                    <div className={"grid grid-cols-1 gap-1"} key={i}>
                         <label className={"text-sm font-light pb-1 text-[rgb(72,72,74)] dark:text-[rgb(134,134,139)]"}>
                             {item.label}
                         </label>
