@@ -13,7 +13,7 @@ export default function Home() {
                 style={{
                     backgroundImage: `url(${Bg.src})`,
                 }}
-                className="px-8 flex aspect-video w-full items-center justify-center bg-center bg-cover bg-no-repeat"
+                className="px-8 flex animate-fade-in-down duration-500 aspect-video w-full items-center justify-center bg-center bg-cover bg-no-repeat"
             />
 
             <article className={"p-12 gap-3 grid grid-rows-2"}>
@@ -35,7 +35,7 @@ export default function Home() {
                 <BasicH1 className={"backdrop-blur-xl bg-none hover:shadow-white/20 shadow-md hover:shadow-xl transition-all"}>
                     Prawdziwy mistrz swojej dziedziny
                 </BasicH1>
-                <BasicP className={'text-black/70 dark:text-white/80'}>Mam 18 lat i fotografią zajmuję się od prawie czterech lat. Specjalizuję się w reportażach z imprez i wydarzeń młodzieżowych oraz w naturalnych sesjach zdjęciowych. Najbardziej interesują mnie prawdziwe emocje i spontaniczne momenty. Pracuję głównie z młodymi ludźmi, tworząc zdjęcia, które dobrze wyglądają zarówno jako pamiątka, jak i w social mediach. </BasicP>
+                <BasicP className={'text-black/70 dark:text-white/80'}>Mam 18 lat i fotografią zajmuję się od prawie pięciu lat. Specjalizuję się w reportażach z imprez i wydarzeń młodzieżowych oraz w naturalnych sesjach zdjęciowych. Najbardziej interesują mnie prawdziwe emocje i spontaniczne momenty. Pracuję głównie z młodymi ludźmi, tworząc zdjęcia, które dobrze wyglądają zarówno jako pamiątka, jak i w social mediach. </BasicP>
             </article>
 
             <div className={"animate-fade-in-right duration-1000"}>
