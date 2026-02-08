@@ -16,7 +16,7 @@ const OrderConsultationForm = () => {
 
     return (
         <>
-            <div className={"grid items-center"}>
+            <div className={"grid items-center animate-fade-in-down duration-500 backdrop-blur-xl hover:shadow-white/20 shadow-md hover:shadow-xl transition-all"}>
                 <BasicButton
                     size={"lg"}
                     variant={"solid"}
@@ -69,11 +69,11 @@ const OrderConsultationForm = () => {
 
 
                                     <div className={"grid grid-cols-2 gap-5 p-5"}>
-                                        <BasicInput type="text" placeholder="Godziny od"
+                                        <BasicInput type="text" placeholder="Od godziny"
                                                       name={"od"}
                                                       className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 outline-none transition-all dark:border-gray-600 dark:bg-[rgba(28,28,30,1)] dark:text-gray-100"/>
 
-                                        <BasicInput type="text" placeholder="Godziny do"
+                                        <BasicInput type="text" placeholder="Do godziny"
                                                       name={"do"}
                                                       className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 outline-none transition-all dark:border-gray-600 dark:bg-[rgba(28,28,30,1)] dark:text-gray-100"/>
 

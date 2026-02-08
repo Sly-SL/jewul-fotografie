@@ -1,7 +1,7 @@
 import Image, {type StaticImageData} from "next/image";
 
 export const RoundPhoto = ({ image }: { image: StaticImageData }) => (
-    <div className="flex items-center justify-end sm:p-12 py-2">
+    <div className="flex items-center justify-center sm:p-12 py-2">
         <div
             className="relative group"
             data-aos="fade-up"
