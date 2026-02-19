@@ -1,0 +1,1 @@
+export type AllCollectionsType = "review" | "users" | "photo" | "sessions"

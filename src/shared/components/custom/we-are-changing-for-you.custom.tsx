@@ -7,7 +7,7 @@ import {Hammer, Settings} from "lucide-react";
 const WeAreChangingForYou = ({description}:{description:string}) => {
     return (
         <article
-            className="hover:scale-[1.02] bg-white/10 pt-5 rounded-2xl border-4 border-orange-500/50 duration-300 items-center flex flex-col justify-center h-[300px] md:h-[300px] lg:h-[350px]"
+            className="hover:scale-[1.02] bg-white/10 pt-5 rounded-2xl border-4 border-purple-500/40 duration-300 items-center flex flex-col justify-center h-[300px] md:h-[300px] lg:h-[350px]"
         >
             <div className="flex bg-gradient-to-r from-orange-300 via-orange-500 to-red-600 bg-clip-text">
                 <Hammer size={55} /><Settings size={55} />
