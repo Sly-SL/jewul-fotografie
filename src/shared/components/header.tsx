@@ -5,6 +5,7 @@ import ServicesSubdiv from "@/shared/components/custom/header/subdivs/subdivs/se
 import ContactSubdiv from "@/shared/components/custom/header/subdivs/subdivs/contact.subdiv";
 import AboutSubdiv from "@/shared/components/custom/header/subdivs/subdivs/about.subdiv";
 import ReviewsSubdiv from "@/shared/components/custom/header/subdivs/subdivs/reviews.subdiv";
+import WorksSubdiv from "@/shared/components/custom/header/subdivs/subdivs/works.subdiv";
 
 
 const Header = () => {
@@ -37,6 +38,7 @@ const Header = () => {
                             <ReviewsSubdiv/>
                             <AboutSubdiv/>
                             <ContactSubdiv/>
+                            <WorksSubdiv/>
                         </li>
                     </nav>
                 </div>

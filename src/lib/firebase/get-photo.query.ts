@@ -2,13 +2,9 @@
 
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "@/lib/firebase/firebase";
+import type {PhotoType} from "@/shared/types/photo.type";
 
-export type Photo = {
-    id: string;
-    image: string;
-};
-
-export async function getPhotoQuery(): Promise<Photo[]> {
+export async function getPhotoQuery(): Promise<PhotoType[]> {
     const ref = collection(db, "photo");
     const snap = await getDocs(ref);
 
@@ -16,6 +12,6 @@ export async function getPhotoQuery(): Promise<Photo[]> {
 
     return snap.docs.map(doc => ({
         id: doc.id,
-        ...(doc.data() as Omit<Photo, "id">),
+        ...(doc.data() as Omit<PhotoType, "id">),
     }));
 }
