@@ -14,28 +14,19 @@ import {ServicesData} from "@/shared/pages/services/data.services";
 import Link from "next/link";
 import {shortcuts} from "@/shared/consts/enums/shortcuts.enum";
 import {cloneElement, isValidElement, type ReactElement} from "react";
-import Head from "next/head";
 
 
 export default async function Home() {
     const worksData = await getPhotoQuery()
     const commentsData = await getReviewsQuery()
     return (
-        <>
-            <Head>
-                <link
-                    rel="preload"
-                    as="image"
-                    href={Bg.src}
-                />
-            </Head>
-            <article>
-                <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-                    <div
-                        style={{
-                            backgroundImage: `url(${Bg.src})`,
-                        }}
-                        className="px-8 flex animate-fade-in-down duration-500 aspect-video w-full items-center justify-center bg-center bg-cover bg-no-repeat"
+        <article>
+            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+                <div
+                    style={{
+                        backgroundImage: `url(${Bg.src})`,
+                    }}
+                    className="px-8 flex animate-fade-in-down duration-500 aspect-video w-full items-center justify-center bg-center bg-cover bg-no-repeat"
                     />
 
                     <article className={"p-12 gap-3 grid grid-rows-2"}>
@@ -142,6 +133,5 @@ export default async function Home() {
                     </section>
                 </section>
             </article>
-        </>
   );
 }
