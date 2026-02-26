@@ -14,6 +14,7 @@ import {ServicesData} from "@/shared/pages/services/data.services";
 import Link from "next/link";
 import {shortcuts} from "@/shared/consts/enums/shortcuts.enum";
 import {cloneElement, isValidElement, type ReactElement} from "react";
+import ContactCustom from "@/shared/components/custom/pages/contact.custom";
 
 
 export default async function Home() {
@@ -31,7 +32,7 @@ export default async function Home() {
 
                     <article className={"p-12 gap-3 grid grid-rows-2"}>
                         <div>
-                            <BasicH1 className={"backdrop-blur-xl bg-none hover:shadow-white/20 animate-fade-in-down duration-500 shadow-md hover:shadow-xl transition-all"}>
+                            <BasicH1 className={"backdrop-blur-2xl bg-none hover:shadow-white/30 animate-fade-in-down duration-500 shadow-md hover:shadow-xl transition-all"}>
                                 Prawdziwy mistrz swojej dziedziny
                             </BasicH1>
                             <BasicP className={'text-black/70 dark:text-white/80 duration-500 animate-fade-in-up'}>Hej, jestem Filip i zajmuję się tworzeniem wyjątkowych zdjęć już wprawie 5 lat. Każde zdjęcie ma historię. Robię je tak, żeby wracać do nich z dumą </BasicP>
@@ -44,11 +45,16 @@ export default async function Home() {
                 <hr className={"blur-xs"}/>
                 <section className="grid lg:grid-cols-2 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
 
-                    <article className={"animate-fade-in-left duration-1000 p-12 gap-3 grid grid-rows-2"}>
-                        <BasicH2 className={"backdrop-blur-xl hover:shadow-white/20 shadow-md hover:shadow-xl transition-all"}>
-                            Zawodowiec marzeń i profesjonalista
-                        </BasicH2>
-                        <BasicP className={'text-black/70 dark:text-white/80'}>Mam 18 lat i fotografią zajmuję się od prawie pięciu lat. Specjalizuję się w reportażach z imprez i wydarzeń młodzieżowych oraz w naturalnych sesjach zdjęciowych. Najbardziej interesują mnie prawdziwe emocje i spontaniczne momenty. Pracuję głównie z młodymi ludźmi, tworząc zdjęcia, które dobrze wyglądają zarówno jako pamiątka, jak i w social mediach. </BasicP>
+                    <article className={"animate-fade-in-left grid grid-rows-2 gap-20 duration-1000 p-12"}>
+                        <div>
+                            <BasicH2 className={"backdrop-blur-xl hover:shadow-white/25 shadow-md hover:shadow-xl transition-all"}>
+                                Zawodowiec marzeń i profesjonalista
+                            </BasicH2>
+                            <BasicP className={'text-black/70 dark:text-white/80'}>Mam 18 lat i fotografią zajmuję się od prawie pięciu lat. Specjalizuję się w reportażach z imprez i wydarzeń młodzieżowych oraz w naturalnych sesjach zdjęciowych. Najbardziej interesują mnie prawdziwe emocje i spontaniczne momenty. Pracuję głównie z młodymi ludźmi, tworząc zdjęcia, które dobrze wyglądają zarówno jako pamiątka, jak i w social mediach. </BasicP>
+                        </div>
+                        <div className={"grid justify-center"}>
+                            <ContactCustom/>
+                        </div>
                     </article>
 
                     <div className={"animate-fade-in-right duration-1000"}>
@@ -56,7 +62,7 @@ export default async function Home() {
                     </div>
                 </section>
                 <hr className={"blur-xs"}/>
-                <section className={"bg-linear-to-r backdrop-blur-2xl from-blue-700/10 via-purple-700/10 to-red-300/10"}>
+                <section className={"bg-linear-to-r backdrop-blur-2xl from-blue-400/5 via-purple-400/5 to-red-300/5"}>
                     <section className={"m-4"}>
                         <CarouselBody sectionName={"Przykłady moich prac"} type={"photo"} data={worksData}/>
                     </section>

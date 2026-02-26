@@ -1,26 +1,7 @@
-import type {ReactNode} from "react";
-import {House, Mail, Phone} from "lucide-react";
 import {BasicH1} from "@/shared/components/lib/basic/text/h1.text";
 import SocialLinks from "@/shared/components/custom/header/subdivs/subdivs/contact/social-links.contact";
 import OrderConsultationForm from "@/shared/components/forms/order-consultation.form";
-
-const Buttons: {
-    label: string,
-    linkClassName: string,
-    buttons: {
-        element: ReactNode,
-    }[]
-}[] = [
-    {
-        label: "Kontakt",
-        linkClassName: "inline-flex items-center dark:text-white/80 text-black/80 gap-2 text-base  hover:scale-[1.02] duration-300 sm:text-lg",
-        buttons: [
-            { element: <a href={"tel:+48 796 032 801"} className="inline-flex items-center gap-2"><Phone /> {"+48 796 032 801"}</a> },
-            { element: <a className="inline-flex items-center gap-2" href="mailto:jewulfotografia@gmail.com"><Mail /> jewulfotografia@gmail.com</a> },
-            { element: <a href={"https://maps.app.goo.gl/fif8GiDj7Gm4kpPY8"} className="inline-flex items-center gap-2"><House />  33-100 Tarnów</a> }
-        ]
-    }
-]
+import ContactCustom from "@/shared/components/custom/pages/contact.custom";
 
 const Contact = () => {
 
@@ -33,19 +14,7 @@ const Contact = () => {
 
                 <section>
                     <article className={"grid grid-cols-1 gap-5 items-start"}>
-                        {Buttons.map((item, i) => (
-                            <section className={"grid grid-cols-1 pt-2 border-t dark:border-amber-50 border-amber-900"} key={i}>
-                                <h2 className={"font-bold dark:text-white/80 text-black/80 pb-1 md:text-3xl text-xl"}>
-                                    {item.label}
-                                </h2>
-
-                                {item.buttons.map((button, i) => ((
-                                    <section key={i} className={item.linkClassName}>
-                                        {button.element}
-                                    </section>
-                                )))}
-                            </section>
-                        ))}
+                        <ContactCustom/>
                     </article>
                     <article className={"pt-5"}>
                         <SocialLinks />

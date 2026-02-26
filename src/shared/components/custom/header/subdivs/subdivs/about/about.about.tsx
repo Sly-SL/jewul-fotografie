@@ -1,26 +1,9 @@
-export const dynamic = "force-static"
-
-import type {ComponentType, FC, ReactNode, SVGProps} from "react"
-import {ArrowUpRight, Globe, House, Mail, Phone} from "lucide-react"
+import type {ComponentType, FC, SVGProps} from "react"
+import {ArrowUpRight, Globe} from "lucide-react"
 import Link from "next/link";
+import ContactCustom from "@/shared/components/custom/pages/contact.custom";
 
-const Buttons: {
-    label: string,
-    linkClassName: string,
-    buttons: {
-        element: ReactNode,
-    }[]
-}[] = [
-    {
-        label: "Kontakt",
-        linkClassName: "inline-flex items-center dark:text-white/80 text-black/80 gap-2 text-base  hover:scale-[1.02] duration-300 sm:text-lg",
-        buttons: [
-            { element: <a href={"tel:+48 796 032 801"} className="inline-flex items-center gap-2"><Phone /> {"+48 796 032 801"}</a> },
-            { element: <a className="inline-flex items-center gap-2" href="mailto:jewulskifotografia@gmail.com"><Mail /> jewulskifotografia@gmail.com</a> },
-            { element: <Link href={"https://maps.app.goo.gl/ccjCT7E7AquW8ZKn7"} className="inline-flex items-center gap-2"><House /> 33-100 Tarnów</Link> }
-        ]
-    }
-]
+export const dynamic = "force-static"
 
 
 export const GoogleMaps: FC = () => {
@@ -155,21 +138,7 @@ const AboutPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className={"grid grid-cols-1 items-start justify-center"}>
-                        {Buttons.map((item, i) => (
-                            <div className={"grid grid-cols-1 pt-2 border-t dark:border-amber-50 border-amber-900"} key={i}>
-                                <label className={"font-bold dark:text-white/80 text-black/80 pb-1 px-1 text-3xl "}>
-                                    {item.label}
-                                </label>
-
-                                {item.buttons.map((button, i) => ((
-                                    <div key={i} className={item.linkClassName}>
-                                        {button.element}
-                                    </div>
-                                )))}
-                            </div>
-                        ))}
-                    </div>
+                    <ContactCustom/>
                 </div>
             </div>
         </section>

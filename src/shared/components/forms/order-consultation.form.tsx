@@ -16,7 +16,7 @@ const OrderConsultationForm = () => {
 
     return (
         <>
-            <div className={"grid items-center animate-fade-in-down duration-500 backdrop-blur-xl hover:shadow-white/20 shadow-md hover:shadow-xl transition-all"}>
+            <div className={"grid items-center animate-fade-in-down duration-500 backdrop-blur-xl hover:shadow-white/25 shadow-sm hover:shadow-xl transition-all"}>
                 <BasicButton
                     size={"lg"}
                     variant={"solid"}
