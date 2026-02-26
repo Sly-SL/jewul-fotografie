@@ -36,8 +36,7 @@ const ReviewsSubdiv = async () => {
                                 </div>
                             ))}
 
-                            {/* 🔥 Кастомный элемент в конце */}
-                            <Link href={shortcuts.reviews} className="w-2xl hover:scale-[1.02] duration-300 h-[400px] flex-shrink-0 bg-white/10 rounded-2xl border-4 border-purple-500/40 flex items-center justify-center">
+                            <Link href={shortcuts.reviews} className="w-2xl hover:scale-[1.02] duration-300 h-[400px] flex-shrink-0 bg-white/10 pt-5 rounded-2xl border-4 border-purple-500/40 flex items-center justify-center">
                                 <p className="dark:text-white text-black opacity-70 text-xl">Zobacz wszystkie opinie</p>
                                 <ArrowRight size={55}/>
                             </Link>

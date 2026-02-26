@@ -61,10 +61,6 @@ export default async function Home() {
             </section>
             <hr className={"blur-xs"}/>
             <section className={"m-4"}>
-                    <CarouselBody sectionName={"Recenzje"} type={"comment"} data={commentsData}/>
-            </section>
-            <hr className={"blur-xs"}/>
-            <section className={"m-4"}>
                 <BasicH3 className={"dark:border-white/80 border-black/80 border-b hover:shadow-white/20 animate-fade-in-up"}>Usługi</BasicH3>
                 <section className={"m-4 gap-8 grid grid-cols-2"}>
                     {ServicesData.map((service, i) => (
@@ -114,6 +110,10 @@ export default async function Home() {
                         </section>
                     ))}
                 </section>
+            </section>
+            <hr className={"blur-xs"}/>
+            <section className={"m-4 flex"}>
+                <CarouselBody sectionName={"Recenzje"} type={"comment"} data={commentsData}/>
             </section>
         <hr className={"blur-xs"}/>
             <section className="grid lg:grid-cols-2 gap-3 min-h-[50vh] items-center justify-center bg-zinc-50/50 font-sans dark:bg-black/40">
