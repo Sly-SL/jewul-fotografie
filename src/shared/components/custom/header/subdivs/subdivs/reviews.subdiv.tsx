@@ -2,18 +2,17 @@ import SubdivConstructor from "@/shared/components/custom/header/subdivs/subdiv-
 import {BasicH1} from "@/shared/components/lib/basic/text/h1.text";
 import {CONSTANTS} from "@/shared/consts/consts.consts";
 import {CommentForm} from "@/shared/components/forms/comment.form";
-import {DefaultCommentsEnum} from "@/shared/consts/enums/default-comments.enum";
 import CommentBody from "@/shared/components/custom/body/comments/comment.body";
 import type {CommentBodyProps} from "@/shared/types/comment-body.type";
 import WeAreChangingForYou from "@/shared/components/custom/we-are-changing-for-you.custom";
 import Link from "next/link";
 import {shortcuts} from "@/shared/consts/enums/shortcuts.enum";
 import {ArrowRight} from "lucide-react";
+import {getReviewsQuery} from "@/lib/firebase/get-reviews.query";
 
-const ReviewsSubdiv = () => {
-    const data:{data:CommentBodyProps[]} = {data:[]};
-    data.data = DefaultCommentsEnum.slice(0,3);
-
+const ReviewsSubdiv = async () => {
+    const data = await getReviewsQuery();
+    data.length = 7
 
     return (
         <SubdivConstructor id={"reviews"}>
@@ -26,9 +25,9 @@ const ReviewsSubdiv = () => {
                         <article className={"md:pt-5"}>
                             <CommentForm/>
                         </article>}
-                    {data.data.length > 0 &&
+                    {data.length > 0 &&
                         <>
-                            {data.data.map((comment: CommentBodyProps, i) => (
+                            {data.map((comment: CommentBodyProps, i) => (
                                 <div
                                     key={i}
                                     className="lg:w-2xl md:w-2xs hover:scale-[1.02] duration-300 md:h-[300px] lg:h-[350px] flex-shrink-0"
@@ -38,7 +37,7 @@ const ReviewsSubdiv = () => {
                             ))}
 
                             {/* 🔥 Кастомный элемент в конце */}
-                            <Link href={shortcuts.reviews} className="w-2xl hover:scale-[1.02] duration-300 h-[400px] flex-shrink-0 bg-white/10 rounded-2xl border-4 border-orange-500/40 flex items-center justify-center">
+                            <Link href={shortcuts.reviews} className="w-2xl hover:scale-[1.02] duration-300 h-[400px] flex-shrink-0 bg-white/10 rounded-2xl border-4 border-purple-500/40 flex items-center justify-center">
                                 <p className="dark:text-white text-black opacity-70 text-xl">Zobacz wszystkie opinie</p>
                                 <ArrowRight size={55}/>
                             </Link>

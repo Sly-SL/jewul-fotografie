@@ -1,19 +1,17 @@
 "use client";
 
-import {type ChangeEvent, type FormEvent, memo, useCallback, useRef, useState} from "react";
+import {type ChangeEvent, memo, useCallback, useRef, useState} from "react";
 import Image from "next/image";
 import {ImagePlus, Loader2, Send, X} from "lucide-react";
 import {useFormStatus} from "react-dom";
-
-interface CommentFormValues {
-    newComment: string;
-    userName: string;
-    imageFile: File | null;
-}
+import {CommentBodyProps} from "@/shared/types/comment-body.type";
+import {UploadImageAction} from "@/lib/imagebb/upload.imagebb";
+import {AddReviewAction} from "@/app/reviews/action";
 
 export const CommentForm = memo(function CommentForm() {
-    const [newComment, setNewComment] = useState<string>("");
-    const [userName, setUserName] = useState<string>("");
+    const [comment, setNewComment] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [rating, setRating]= useState<number>(0)
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [imageFile, setImageFile] = useState<File | null>(null);
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -28,9 +26,10 @@ export const CommentForm = memo(function CommentForm() {
     // =========================
 
     const submitForm = useCallback(
-        async (data: CommentFormValues) => {
+        async (data: Omit<CommentBodyProps, "id">) => {
             setIsSubmitting(true);
             try {
+                await AddReviewAction(data)
                 console.log("Submitting...", data);
 
             } catch (err) {
@@ -68,21 +67,24 @@ export const CommentForm = memo(function CommentForm() {
     }, []);
 
     const handleSubmit = useCallback(
-        (e: FormEvent<HTMLFormElement>) => {
+        async (e: ChangeEvent) => {
             e.preventDefault();
-            if (!newComment.trim() || !userName.trim()) return;
+            if (!comment.trim() || !name.trim()) return;
 
-            submitForm({ newComment, userName, imageFile });
+            const image = await UploadImageAction(imageFile)
+
+            await submitForm({comment, name, image, rating});
 
             setNewComment("");
-            setUserName("");
+            setName("");
             setImagePreview(null);
             setImageFile(null);
+            setRating(100)
 
             if (fileInputRef.current) fileInputRef.current.value = "";
             if (textareaRef.current) textareaRef.current.style.height = "auto";
         },
-        [newComment, userName, imageFile, submitForm]
+        [comment, name, imageFile, submitForm,rating]
     );
 
     // =========================
@@ -99,9 +101,29 @@ export const CommentForm = memo(function CommentForm() {
 
                 <input
                     type="text"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="Wpisz imię"
+                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
+                    required
+                />
+            </div>
+
+            <div className="space-y-2">
+                <label className="block text-sm font-medium text-white">
+                    Ocena <span className="text-blue-400">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    value={rating}
+                    onChange={(e) =>{
+                        if(e.target.valueAsNumber > 100 || e.target.valueAsNumber < 0){
+                            setRating(100)
+                        }
+                        setRating(e.target.valueAsNumber)
+                    }}
+                    placeholder="0/100"
                     className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
                     required
                 />
@@ -115,7 +137,7 @@ export const CommentForm = memo(function CommentForm() {
 
                 <textarea
                     ref={textareaRef}
-                    value={newComment}
+                    value={comment}
                     onChange={handleTextareaChange}
                     placeholder="Napisz wiadomość..."
                     className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none min-h-[120px]"

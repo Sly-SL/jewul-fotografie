@@ -9,7 +9,7 @@ const CommentBody = ({ data }: { data: CommentBodyProps }) => {
     const safeRating = Math.min(100, Math.max(0, data.rating));
 
     return (
-        <article className="rounded-2xl bg-white/10 h-full relative border-3 w-full shadow-2xl border-orange-500/50 p-5 space-y-4">
+        <article className="rounded-2xl bg-white/10 h-full relative border-3 w-full max-w-2xs shadow-2xl border-purple-500/50 p-5 space-y-4">
 
             {/* Avatar */}
             <section className="w-20 h-20 relative rounded-full overflow-hidden bg-black/10 flex items-center justify-center">

@@ -1,9 +1,10 @@
 "use client";
 
 import {SubmitEvent, useState} from "react";
-import {UploadImageAction} from "@/app/admin/action";
 import {toast} from "sonner";
 import {BasicH3} from "@/shared/components/lib/basic/text/h3.text";
+import {UploadImageAction} from "@/lib/imagebb/upload.imagebb";
+import {AddWorkAction} from "@/app/admin/action";
 
 export const AddPhotoForm = () => {
     const [file, setFile] = useState<File | null>(null);
@@ -11,7 +12,8 @@ export const AddPhotoForm = () => {
     const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        await UploadImageAction(file);
+        const url = await UploadImageAction(file);
+        await AddWorkAction(url)
         toast.info(<BasicH3>Obraz został wysłany</BasicH3>)
     };
 
