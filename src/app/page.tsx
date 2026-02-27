@@ -63,7 +63,7 @@ export default async function Home() {
                 </section>
                 <hr className={"blur-xs"}/>
                 <section className={"bg-linear-to-r backdrop-blur-2xl from-blue-400/5 via-purple-400/5 to-red-300/5"}>
-                    <section className={"m-4"}>
+                    <section className={"m-4 overflow-hidden"}>
                         <CarouselBody sectionName={"Przykłady moich prac"} type={"photo"} data={worksData}/>
                     </section>
                     <hr className={"blur-xs"}/>

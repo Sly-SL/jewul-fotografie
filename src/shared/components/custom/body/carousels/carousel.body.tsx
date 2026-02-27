@@ -18,7 +18,7 @@ const CarouselBody = ({
     data: PhotoType[] | CommentBodyProps[];
 }) => {
     return (
-        <article className="relative grid gap-1 w-screen">
+        <article className="relative grid gap-1">
             <BasicH3 className="dark:border-white/80 hover:shadow-white/20 animate-fade-in-up border-black/80 border-b">
                 {sectionName}
             </BasicH3>
@@ -27,7 +27,7 @@ const CarouselBody = ({
                 <section
                     id={`carousel-section-${sectionName}`}
                     aria-label={`Carousel ${sectionName}`}
-                    className="relative flex gap-4 overflow-x-auto flex-1 min-w-0 border-black/80 dark:border-white/80 px-4 py-3 scroll-snap-x-mandatory"
+                    className="overflow-x-auto relative border-black/80 dark:border-white/80 flex gap-4 snap-x snap-mandatory px-4 py-3"
                 >
                     {type === "photo" &&
                         (data as PhotoType[]).map((item) => (
