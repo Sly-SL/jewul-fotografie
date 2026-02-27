@@ -22,7 +22,7 @@ export default async function Home() {
     const commentsData = await getReviewsQuery()
     return (
         <article>
-            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+            <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen max-w-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
                 <div
                     style={{
                         backgroundImage: `url(${Bg.src})`,
@@ -69,7 +69,7 @@ export default async function Home() {
                     <hr className={"blur-xs"}/>
                     <section className={"m-4"}>
                         <BasicH3 className={"dark:border-white/80 border-black/80 border-b hover:shadow-white/20 animate-fade-in-up"}>Usługi</BasicH3>
-                        <section className={"m-4 gap-8 grid grid-cols-2"}>
+                        <section className={"m-4 gap-8 grid grid-cols-1 md:grid-cols-2"}>
                             {ServicesData.map((service, i) => (
                                 <section
                                     key={i}
@@ -97,14 +97,14 @@ export default async function Home() {
 
                                         {/* Content */}
                                         <div className="relative p-8 flex flex-col justify-end h-60 sm:h-72 text-white ">
-                                            <h2 itemProp="name" className="text-2xl  sm:text-3xl font-semibold mb-2 drop-shadow-lg">
+                                            <h2 itemProp="name" className="md:text-2xl text-xl font-semibold mb-2 drop-shadow-lg">
                                                 {service.title}
                                             </h2>
                                             <p itemProp="description" className="hidden md:grid text-sm text-gray-100 max-w-md">
                                                 {service.description || "Profesjonalna usługa dostosowana do Twoich potrzeb."}
                                             </p>
                                             {service.rules && (
-                                                <p className="mt-3 text-lg font-semibold text-purple-400" itemProp="offers" itemScope
+                                                <p className="mt-3 text-sm font-semibold text-purple-400" itemProp="offers" itemScope
                                                    itemType="https://schema.org/Offer">
                                         <span itemProp="price">{service.rules.map((rule, i) => (
                                             <span key={i}>{rule} </span>

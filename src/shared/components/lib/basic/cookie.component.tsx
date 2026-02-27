@@ -21,7 +21,7 @@ export default function Cookie () {
     if (!mounted || !visible) return null;
 
     return (
-        <div className="max-w-xl max-h-1/8 left-1/2 transform bottom-4 mx-2 -translate-x-1/2 flex justify-between flex-wrap items-end flex-col bg-black/10 border gap-2 border-white/10 backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-2xl p-6 fixed w-full z-999" style={{
+        <div className="max-w-xl max-h-1/8 left-1/2 transform bottom-4 mx-2 -translate-x-1/2 flex justify-between flex-wrap items-end flex-col bg-black/10 border gap-2 border-white/10 backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-2xl p-6 fixed w-screen z-999" style={{
         }}>
             <p className="text-base text-body flex-[1_0_300px] tracking-tight self-start">
                 Używamy pliki cookie

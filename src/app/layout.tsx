@@ -26,7 +26,7 @@ export default function RootLayout({
                                    }: Readonly<{ children: ReactNode }>) {
     return (
         <html lang="pl">
-        <body className={` ${montserrat.variable} antialiased`}>
+        <body className={` ${montserrat.variable} antialiased max-w-screen`}>
                 <Header />
                 <main id={"root"} className="pt-20">
                     {children}

@@ -11,7 +11,7 @@ import WorksSubdiv from "@/shared/components/custom/header/subdivs/subdivs/works
 const Header = () => {
 
     return (
-        <header className="bg-[rgba(255,255,255,0.55)] dark:bg-[rgba(22,22,23,0.8)] w-full fixed z-[9999] backdrop-blur-[20px] backdrop-saturate-180 border-b border-purple-100 dark:border-purple-200/15">
+        <header className="bg-[rgba(255,255,255,0.55)] dark:bg-[rgba(22,22,23,0.8)] w-screen max-w-screen fixed z-[9999] backdrop-blur-[20px] backdrop-saturate-180 border-b border-purple-100 dark:border-purple-200/15">
             <h1 className={"hidden"}>Jewulski Fotografia</h1>
             <div className={"h-full"}>
 

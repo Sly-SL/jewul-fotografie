@@ -4,7 +4,7 @@ import {PhotoType} from "@/shared/types/photo.type";
 const PhotoBody = ({ photo }: { photo: PhotoType }) => {
     return (
         photo.image &&
-        <div className="group relative w-full snap-start max-w-sm shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg">
+        <div className="group relative hover:scale-[1.02] w-full snap-start max-w-sm shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg">
 
             <div className="relative w-full aspect-video min-h-[180px]">
                 <Image

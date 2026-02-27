@@ -1,6 +1,6 @@
 "use client"
 
-import {useRef, useState,} from "react";
+import {useEffect, useRef, useState,} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {BasicButton} from "@/shared/components/lib/basic/button.component";
 import {BasicInput} from "@/shared/components/lib/basic/input.component";
@@ -8,10 +8,41 @@ import {CONSTANTS} from "@/shared/consts/consts.consts";
 import {BasicH2} from "@/shared/components/lib/basic/text/h2.text";
 
 const OrderConsultationForm = () => {
-    const dialogRef = useRef<HTMLDialogElement>(null);
     const [isOpen, setIsOpen] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
-    const openDialog = () => setIsOpen(true);
+    useEffect(() => {
+        if (isOpen && dialogRef.current) {
+            setTimeout(() => {
+                dialogRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 50); // 50ms обычно достаточно
+        }
+
+        if (isOpen) {
+            setTimeout(() => {
+                const scrollY = window.scrollY;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollY}px`;
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+                document.body.style.overflow = 'hidden';
+            },1000)
+        }
+
+
+        return () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, scrollY);
+        };
+    }, [isOpen]);
+
+
+    const openDialog = () => setIsOpen(true)
+
     const closeDialog = () => setIsOpen(false);
 
     return (
@@ -30,7 +61,7 @@ const OrderConsultationForm = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="fixed inset-0 z-30 flex items-center justify-center"
+                        className="fixed inset-0 z-30 flex items-center h-full backdrop-blur-2xl justify-center"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -46,6 +77,7 @@ const OrderConsultationForm = () => {
                         >
                                 <form action="https://formsubmit.co/el/pesome"
                                       method="POST"
+                                      id={"request-consultation-modal"}
                                       className="w-full max-w-full flex flex-col gap-4">
                                     <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Darmowa
                                         konsultacja</h2>
