@@ -18,7 +18,7 @@ const CarouselBody = ({
     data: PhotoType[] | CommentBodyProps[];
 }) => {
     return (
-        <article className="relative grid gap-1 w-full">
+        <article className="relative grid gap-1 w-screen">
             <BasicH3 className="dark:border-white/80 hover:shadow-white/20 animate-fade-in-up border-black/80 border-b">
                 {sectionName}
             </BasicH3>
